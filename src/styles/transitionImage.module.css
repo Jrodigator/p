@@ -1,0 +1,77 @@
+/* transitionImage.module.css */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(15vw);
+  }
+}
+
+@keyframes slideOut {
+    0% {
+      transform: translateX(15vw);
+    }
+    100% {
+      transform: translateX(100vw);
+    }
+  }
+
+.transitionImage {
+  position: fixed;
+  top: -30vh;
+  left: 100%;
+  /* right: 0; */
+  /* transform: translateX(100%); */
+  /* transform: translate(-50%, -50%); */
+  width: 400px; /* Adjust size as needed */
+  height: 400px; /* Adjust size as needed */
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation-fill-mode: forwards;
+  /* border: 1px solid red; For debugging purposes */
+}
+
+.transitionImage.show {
+  animation: slideIn 2s forwards;
+}
+
+.transitionImage.hide {
+  animation: slideOut 2s forwards;
+}
+
+.centerImage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid red; /* For debugging purposes */
+}
+
+.image-about {
+  background-image: url("../public/magglass.png"); /* Replace with your image path */
+}
+
+.image-art {
+  background-image: url("/path/to/art-image.png"); /* Replace with your image path */
+}
+
+.image-work {
+  background-image: url("/path/to/work-image.png"); /* Replace with your image path */
+}
+
+.image-instagram {
+  background-image: url("/path/to/instagram-image.png"); /* Replace with your image path */
+}
+
+.image-contact {
+  background-image: url("/path/to/contact-image.png"); /* Replace with your image path */
+}
+
+.image-park {
+  background-image: url("/path/to/park-image.png"); /* Replace with your image path */
+}

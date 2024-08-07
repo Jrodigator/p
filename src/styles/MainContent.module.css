@@ -1,0 +1,176 @@
+.mainContent {
+  text-align: center;
+  background-color: rgba(51, 51, 51, 0);
+  color: white;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.rgbTextShift {
+  font-size: 1.3em;
+  margin: 10px 0;
+  color: white;
+  text-shadow: 1px 1px 0 #f00, -1px -1px 0 #0f0, 1px -1px 0 #00f;
+}
+
+.nav {
+  background-color: rgba(51, 51, 51, 0);
+  position: relative;
+  z-index: 1;
+  border: 48px solid #eeeeee;
+  border-image: url("../app/title-card.svg") 44 stretch;
+  box-shadow: 0 6rem 3rem -4rem black;
+  text-align: center;
+  padding: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: all 0.65s ease-in-out;
+  transform-origin: 50% 50%;
+  max-width: 28rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navlinks {
+  background-color: rgb(51, 51, 51);
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 10px;
+  margin: 0;
+  flex-wrap: wrap; /* Allow items to wrap to new lines */
+  text-align: center; /* Center text within each item */
+}
+
+.navlinks > * {
+  flex: 0 0 auto; /* Allow items to grow and shrink, maintaining their size */
+  padding-inline: 60px 60px; /* Adjust margin as needed for spacing between items */
+  margin-top: 10px;
+}
+
+
+.images {
+  color: white;
+  background-color: rgb(51, 51, 51);
+  padding-bottom: 10%;
+  padding-top: 10%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End in the original position */
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.6;
+    transform: translateY(0); /* Start in the original position */
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px); /* End slightly below */
+  }
+}
+
+
+.eyes {
+  height: 20px;
+  width: 40px;
+  position: fixed;
+  opacity: 0.8; /* Initially hidden */  
+}
+
+.eyesWrapper {
+  position: fixed; /* Fixed position to ensure it's always visible on screen */
+  pointer-events: none; /* Prevent the image from interfering with hover events */
+  opacity: 0; /* Initially hidden */
+  animation-duration: 1s;
+  /* animation-timing-function: ease-in-out; */
+  animation-fill-mode: forwards;
+}
+
+.eyesWrapper.show {
+  animation-name: fadeIn;
+}
+
+.eyesWrapper.hide {
+  opacity: 0;
+  /* animation-name: fadeOut; */
+}
+
+.instagramEmbed {
+  pointer-events: none;
+  position: absolute;
+  max-width: 500px;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+}
+
+.tv {
+  pointer-events: none;
+  position: fixed;
+  width: 366px;
+  height: 300px;
+  z-index: 1;
+  top: 10vh;
+  left: 40vw;
+  rotate: 0deg;
+}
+
+@keyframes slideFromTop {
+  0% {
+    top: -800px; /* Start off-screen above */
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    top: -400px; /* Transition to on-screen */
+    opacity: 1; /* Fully opaque */
+  }
+}
+
+@keyframes slideFromBottom {
+  0% {
+    bottom: -800px; /* Start off-screen below */
+    opacity: 0; /* Start fully transparent */
+  }
+  100% {
+    bottom: -400px; /* Transition to on-screen */
+    opacity: 1; /* Fully opaque */
+  }
+}
+
+/* styles/Home.module.css */
+.imageTop {
+  position: absolute;
+  left: -110%;
+  width: 110vw;
+  top: -400px; /* Start off-screen */
+  animation: slideFromTop 1.5s ease-in-out forwards;  /* Animation transition */
+}
+
+.imageBottom {
+  position: absolute;
+  left: -110%;
+  width: 110vw;
+  bottom: -400px; /* Start off-screen */
+  animation: slideFromBottom 1.5s ease-in-out forwards; /* Animation transition */
+}
+
+.imageTop.show {
+  top: 0px; /* Transition to on-screen */
+}
+
+.imageBottom.show {
+  bottom: 0px; /* Transition to on-screen */
+}

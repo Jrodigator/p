@@ -1,0 +1,7 @@
+
+.instagramEmbed {
+    pointer-events: none;
+    position: absolute;
+    max-width: 500px;
+    width: 100%;
+}
